@@ -1,0 +1,274 @@
+{% load static %}
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'app/fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+
+  </head>
+<style>
+  .form-dark .font-small {
+  font-size: 0.8rem; }
+
+.form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
+  font-size: 0.8rem; }
+
+.form-dark [type="checkbox"] + label:before {
+  top: 2px;
+  width: 15px;
+  height: 15px; }
+
+.form-dark .md-form label {
+  color: black; }
+
+.form-dark input[type=email]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=email]:focus:not([readonly]) + label {
+  color: black; }
+
+.form-dark input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+  color: black; }
+
+.form-dark input[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  z-index: 0;
+  border: 1.5px solid #fff;
+  border-radius: 1px;
+  margin-top: 2px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+
+.form-dark input[type="checkbox"]:checked + label:before {
+  top: -4px;
+  left: -3px;
+  width: 12px;
+  height: 22px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent #00c851 #00c851 transparent;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%; }
+
+.form-dark .modal-header {
+    border-bottom: none;
+    color:black;
+}
+
+
+.form-elegant .font-small {
+    font-size: 0.8rem; }
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25); }
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); }
+
+.form-elegant .modal-header {
+    border-bottom: none; }
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3!important; }
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400; }
+.bb{
+background-color:black;
+}
+</style>
+
+  <div class="site-wrap">
+
+    <header class="site-navbar py-4 bg-white" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">Chimper</a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="{% url 'index1' %}">Home</a></li>
+                <li><a href="{% url 'work' %}">Work</a></li>
+                <li class="has-children">
+                  <a href="{% url 'services' %}">Services</a>
+                  <ul class="dropdown">
+                    <li><a href="services.html">Web Applications</a></li>
+                    <li><a href="services.html">WordPress Dev</a></li>
+                  </ul>
+                </li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'basic_upload' %}">Upload</a></li>
+                {% if 'uid' in request.session %}
+                  <li>  <a href="{% url 'logout1' %}" class="text-uppercase">Logout</a></li>
+                 {% else %}
+                   <li><a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm">Login</a></li>
+                {% endif %}
+                <li><a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#darkModalForm">Signup</a></li>
+
+
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+
+<!-- Modal -->
+<div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog form-dark" role="document">
+    <!--Content-->
+    <div class="modal-content card card-image">
+      <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+        <!--Header-->
+
+        <div class="modal-header text-center pb-4">
+          <h3 class="modal-title w-100 white-text font-weight-bold" id="mModalLabel"><strong>SIGN</strong>
+            <a class="green-text font-weight-bold"><strong> UP</strong></a></h3>
+          <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+          <!--Body-->
+           <form action="{% url 'reg1' %}" method="post">{% csrf_token %}
+          <div class="md-form mb-4">
+            <input type="text" id="Form-name" class="form-control validate white-text" name="nm" placeholder="Enter Name">
+
+          </div>
+          <div class="md-form mb-4">
+            <input type="text" id="Form-username" class="form-control validate white-text" name="us" placeholder="Enter Username">
+
+          </div>
+           <div class="md-form mb-4">
+            <input type="email" id="Form-email5" class="form-control validate white-text" name="em" placeholder="Enter Email">
+
+          </div>
+
+          <div class="md-form pb-4">
+            <input type="password" id="Form-pass5" class="form-control validate white-text" name="ps" placeholder="Enter Password">
+          </div>
+
+          <!--Grid row-->
+          <div class="row d-flex align-items-center mb-4">
+
+            <!--Grid column-->
+            <div class="text-center mb-3 col-md-12">
+              <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1" style="background-color:#444648;">Sign up</button>
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--Grid row-->
+</form>
+          <!--Grid row-->
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-12">
+              <p class="font-small white-text d-flex justify-content-end">Have an account? <a href="#elegantModalForm" class="green-text ml-1 font-weight-bold" id="button2">
+                  Log in</a></p>
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--Grid row-->
+
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content form-elegant">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign in</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+        <form method="post" action="{% url 'login1' %}">{% csrf_token %}
+        <div class="md-form mb-4">
+           <input type="text" id="Form-username" class="form-control validate white-text" name="us" placeholder="Enter Username">
+        </div>
+
+        <div class="md-form pb-4">
+          <input type="password" id="Form-pass5" class="form-control validate white-text" name="ps" placeholder="Enter Password">
+        </div>
+
+        <div class="text-center mb-3">
+          <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a" style="background-color:#444648;">Sign in</button>
+        </div>
+        </form>
+
+      <!--Footer-->
+      <div class="modal-footer mx-5 pt-3 mb-1">
+        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#darkModalForm" class="blue-text ml-1" id="button1">
+            Sign Up</a></p>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal -->
+</div>
+
+
+    </header>
